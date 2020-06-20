@@ -44,10 +44,11 @@ body {
 }
 
 #navbar #logo {
-  font-size: 35px;
+  font-size: 150%;
   font-weight: bold;
   transition: 0.4s;
   color: rgb(255, 255, 255);
+  vertical-align: middle;
 }
 
 #navbar a:hover {
@@ -114,8 +115,7 @@ footer {
 
 #bodys {
   text-align: center;
-  margin-top:220px;
-  padding:15px 15px 150px;
+  padding: 10% 15px 10%;
   font-size:30px
 }
 
@@ -129,36 +129,35 @@ footer {
 
 #bodys h2 {
   color: #ffffff;
-  font-size: 42px;
-  margin-bottom: 16px;
+  font-size: 90%;
+  margin-bottom: 1%;
   font-style: bold;
   font-family: "Courier";
 }
 
 #bodys h3 {
   color: #ffffff;
-  font-size: 20px;
-  margin-bottom: 16px;
+  font-size: 60%;
+  margin-bottom: 1%;
   font-family: "Garamond";
 }
 
 #bodys h4 {
   color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 16px;
+  font-size: 65%;
+  margin-bottom: 1%;
   font-style: bold;
   font-family: "Times New Roman", Times, serif;
 }
 
 #bodys ul{
   color: #ffffff;
-  font-size: 16px;
+  font-size: 45%;
   display: inline-block;
   text-align: left;
 }
 
 #bodys p{
   color: #ffffff;
-  font-size: 16px;
-  
+  font-size: 38%;
 }
