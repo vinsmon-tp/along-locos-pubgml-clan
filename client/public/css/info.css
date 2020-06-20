@@ -42,7 +42,7 @@ body {
   font-size: 35px;
   font-weight: bold;
   transition: 0.4s;
-  color: rgb(248, 21, 146);
+  color: white;
 }
 
 #navbar a:hover {
@@ -73,12 +73,14 @@ body {
   }
 }
 .page-bg {
-  background: url('/img/bg1.jpg');
-  background-size: 100%;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  -o-filter: blur(1px);
-  -ms-filter: blur(1px);
+  /* background: url('/img/bg1.jpg');
+  background-size: 100%; */
+  background-color: rgba(54, 12, 28, 0.322); /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, rgba(54, 12, 28, 0.322),rgb(204, 6, 82) );
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
   filter: blur(5x);
   position: fixed;
   width: 100%;
@@ -125,7 +127,7 @@ footer {
 
 .card {
   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-  max-width: 120px;
+  /* max-width: 120px; */
   margin: auto;
   text-align: center;
   font-family: arial;
