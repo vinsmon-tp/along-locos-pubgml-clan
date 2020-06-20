@@ -5,6 +5,11 @@
     margin-left: 30%;
     margin-top: 5%;
   }
+
+  @font-face {
+    font-family: myItalicDesignText;
+    src: url('/fonts/Brush Script MT Italic.ttf') format('truetype');
+  }
   
   .card3:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -112,7 +117,7 @@ footer {
   border-top: 1px solid #eeeeee;
   margin-top: 4px;
   /* padding: 4px 0; */
-  font-family: "Brush Script MT";
+  font-family: "myItalicDesignText";
 }
 
 #footer-p{

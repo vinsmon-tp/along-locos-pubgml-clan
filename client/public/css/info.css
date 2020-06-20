@@ -1,5 +1,10 @@
 * {box-sizing: border-box;}
 
+@font-face {
+  font-family: myItalicDesignText;
+  src: url('/fonts/Brush Script MT Italic.ttf') format('truetype');
+}
+
 body { 
     font-family: arial;
     /* max-width: 2048px; */
@@ -98,7 +103,7 @@ footer {
   border-top: 1px solid #eeeeee;
   margin-top: 12px;
   /* padding: 8px 0; */
-  font-family: "Brush Script MT";
+  font-family: "myItalicDesignText";
 }
 
 #footer-p{
@@ -142,7 +147,7 @@ footer {
 .f2 {
   font-size:  24px;
   color: aliceblue;
-  font-family: "Brush Script MT";
+  font-family: "myItalicDesignText";
 }
 
 .entryB{
