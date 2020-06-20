@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{{title}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/about.css">
+      <div class="page-bg"> </div>
+   </head>
+   <body>
+      <div class="main-content">
+      <div id="navbar">
+         <a href="#default" id="logo" style="color: white;">{{title}}</a>
+         <div id="navbar-right">
+            <a class="active" href="/">Home</a>
+            <a href="/info" style="color: white;">Clan Members</a>
+            <a href="/about" style="color: white;">About</a>
+            <form method="GET" action="/login"> 
+                  <button class="entryB" type="submit">
+                     <span>My Profile </span>
+                  </button>
+            </form>
+         </div>
+      </div>
+      <div style="margin-top:200px;padding:15px 15px 50px;font-size:30px;">
+         <div id="container">
+            <p style="font-family: 'Brush Script MT'; 
+            color: rgb(255, 0, 128); margin-left: 5%; margin-right: 5%;
+            text-align: center;">
+               {{care}}
+            </p>
+            <div class="chip" style="margin-top: 4%;">
+               <img src="/img/img_avatar1.png" alt="Person" width="96" height="96">
+               LOCツPOSTYZAM (LEADER) 
+               95266 68908
+            </div>
+            <div class="chip">
+               <img src="/img/img_avatar1.png" alt="Person" width="96" height="96">
+               LOCツBILLY (CO-LEADER) 
+               7994761767
+            </div>
+            <p style="font-family: 'Brush Script MT'; 
+            color: azure; margin-left: 5%; margin-right: 5%;
+            text-align: center; margin-top: 4%;">
+               {{about}}
+            </p>
+            <div style="margin-left: 44%;margin-top: 4%;"> 
+               <img class="dev" src="/img/dev.png" alt="Avatar" style="width:200px">
+            </div>
+            <h2 style="color: bisque;text-align: center;font-size: 30px;" >LOCツLUCIFER</h2>
+            <h3 style="color: bisque;text-align: center;font-size: 25px;" >Developer & Designer</h3>
+            <p style="color: bisque;text-align: center;font-size: 20px;" >(+91) (7338963143)</p>
+            <p class="ridge">{{copyright}}</p>
+         </div>
+      </div>
+      {{>footer}}
+      <script src="/js/navigationbar.js"></script>
+   </body>
+</html>

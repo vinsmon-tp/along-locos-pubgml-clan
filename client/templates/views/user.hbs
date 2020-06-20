@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{{title}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/user.css">
+      <link rel="stylesheet" href="/css/login.css">
+      <div class="page-bg"> </div>
+   </head>
+   <body>
+      <div class="main-content">
+         <div id="navbar">
+            <a href="#default" id="logo">{{title}}</a>
+            <div id="navbar-right">
+               <a class="active" href="/">Home</a>
+               <a href="/info" style="color: white;">Clan Members</a>
+               <a href="/about" style="color: white;">About</a>
+               <form method="POST" action="/logout"> 
+                  <button class="entryB" type="submit">
+                     <span>Logout </span>
+                  </button>
+               </form>
+            </div>
+         </div>
+         <div id="bodys">
+            <div class="card3">
+               <div id="container"></div>
+               <div class="container3" >
+                  <h4 style="font-size: 30px;color: white; font-family: 'Brush Script MT'">
+                     <b> Kill Death Ratio : {{kd}}</b>
+                  </h4>
+                  <h4 style="font-size: 26px;color: white;  font-family: 'Brush Script MT'">
+                     <b>Locos Email : {{email}}</b>
+                  </h4>
+                  <p style="font-size: 26px;color: white; font-family: 'Brush Script MT'">
+                     My Description : {{desc}}
+                  </p> 
+                  <p style="font-size: 26px;color: white;  font-family: 'Brush Script MT'">
+                     Jonied as a LOCO on : {{createdAt}}
+                  </p> 
+                  <p style="font-size: 26px;color: white;  font-family: 'Brush Script MT'">
+                     Profile last Updated : {{updatedAt}}
+                  </p>
+                  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;background-color: #eee3eb15;">
+                     Update Name
+                  </button>
+                  <div id="id01" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/edit" method="post">
+                        <div class="container">
+                           <input id="nameE" type="text" placeholder="Enter new name" name="name" required style="padding: 8px 48px;" autocomplete="off">
+                           <button  style="padding: 10px 48px;" type="submit">Update</button>
+                           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn"
+                            style="background-color: red; color: white; padding: 10px 48px;">
+                              Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div> 
+                  <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;background-color: #eee3eb15;">
+                     Update KD
+                  </button>
+                  <div id="id02" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/edit" method="post">
+                        <div class="container">
+                           <input type="number" step=any placeholder="Enter new KD" name="kd" required style="padding: 8px 48px;" autocomplete="off">
+                           <button style="padding: 10px 48px;" type="submit">Update</button>
+                           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn"
+                              style="background-color: red; color: white;padding: 10px 48px;">
+                                 Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div> 
+                  <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;background-color: #eee3eb15;">
+                     Update Avatar
+                  </button>
+                  <div id="id03" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="container">
+                           <input type="file" style="font-size: 13px; background-color: white;" name="avatar" id="file1" onchange="readSingleFile(this.files)" required>
+                           {{!-- <label for="file1" style="font-size: 16px; color: white;" id="file-label">Choose file</label> --}}
+                           <button type="submit" style="padding: 5px 48px; ">Update</button>
+                           <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn"
+                            style="background-color: red; color: white;padding: 5px 48px;">
+                              Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div> 
+                  <button onclick="document.getElementById('id04').style.display='block'" style="width:auto;background-color: #eee3eb15;">
+                     Update Password
+                  </button>
+                  <div id="id04" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/edit" method="post">
+                        <div class="container">
+                           <input id="oldpwd" type="password" placeholder="Enter old password" name="oldpassword" required style="padding: 8px 48px;" autocomplete="off">
+                           <input id="nwpwd" type="password" placeholder="Enter new password" name="password" required style="padding: 8px 48px;" autocomplete="off">
+                           <button id="pswrst" type="submit" style="padding: 10px 48px;">Update</button>
+                           <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn"
+                            style="background-color: red; color: white;padding: 10px 48px;">
+                              Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div> 
+                  <button onclick="document.getElementById('id06').style.display='block'" style="width:auto;background-color: #eee3eb15;">
+                     Update Description
+                  </button>
+                  <div id="id06" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/edit" method="post">
+                        <div class="container">
+                           <input id="player_desc" type="text" placeholder="Enter new description" name="player_desc" required style="padding: 8px 48px;" autocomplete="off">
+                           <button  style="padding: 10px 48px;" type="submit">Update</button>
+                           <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn"
+                            style="background-color: red; color: white; padding: 10px 48px;">
+                              Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div> 
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/user.js"></script>
+      <script src="/js/navigationbar.js"></script>
+      <script src="/js/login.js"></script>
+      {{>footer}}
+   </body>
+</html>

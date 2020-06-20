@@ -1,0 +1,30 @@
+{
+  "name": "alonglocos-pubgml",
+  "version": "1.0.0",
+  "description": "Its PUBGML clan website for fun purspose.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon ./server/app.js -e js,hbs,css"
+  },
+  "author": "Vinsmon TP",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.18",
+    "multer": "^1.4.2",
+    "sharp": "^0.25.3",
+    "socket.io": "^2.3.0",
+    "validator": "^13.1.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{{title}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/user.css">
+      <link rel="stylesheet" href="/css/login.css">
+      <div class="page-bg"> </div>
+   </head>
+   <body>
+      <div class="main-content">
+         <div id="navbar">
+            <a href="#default" id="logo">{{title}}</a>
+            <div id="navbar-right">
+               <a class="active" href="/">Home</a>
+               <a href="/info" style="color: white;">Clan Members</a>
+               <a href="/about" style="color: white;">About</a>
+            </div>
+         </div>
+         <div id="bodys">
+            <div class="card3">
+               <div class="container3">
+                  <form class="modal-content animate" action="/user/login" method="post">
+                     <div class="imgcontainer">
+                        <img src="/img/bg5.jpg" alt="Avatar" class="avatar">
+                     </div>
+                     <div class="container">
+                        <input type="text" placeholder="Enter Email" name="email" required>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <button type="submit">Login</button>
+                     </div>
+                  </form>
+                  {{!-- future add --}}
+                  {{!-- <div>
+                     <button class="adminButton" onclick="document.getElementById('id05').style.display='block'" >Admin Panel</button>
+                  </div>
+                  <div id="id05" class="modal" style="margin-left: 2%;">
+                     <form class="modal-content animate" action="/edit" method="post">
+                        <div class="container" style="background-color: rgb(255, 251, 34); padding: 120px 120px;" >
+                           <input id="admnEmail" type="email" placeholder="Enter admin email" name="admnEmail" required
+                                 autocomplete="off" style="padding: 8px 16px; text-align: left;">
+                           <input id="admnPswd" type="password" placeholder="Enter admin password" name="admnPswd" 
+                                 required style="padding: 8px 16px; text-align: left" autocomplete="off">
+                           <input id="admnScrtKey" type="password" placeholder="Enter admin key" name="admnScrtKey" required 
+                                 style="padding: 8px 16px; text-align: left" autocomplete="off">
+                           <button id="pswrst" type="submit" style="padding: 10px 48px;">Update</button>
+                           <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn"
+                            style="background-color: red; color: white;padding: 10px 48px;">
+                              Cancel
+                           </button>
+                        </div>
+                     </form>
+                  </div>  --}}
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="/js/navigationbar.js"></script>
+      {{>footer}}
+   </body>
+</html>

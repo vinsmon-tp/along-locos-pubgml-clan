@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{{title}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/info.css">
+      <div class="page-bg"> </div>
+   </head>
+   <body>
+      <div class="main-content">
+         <div id="navbar">
+            <a href="#default" id="logo">{{title}}</a>
+            <div id="navbar-right">
+               <a class="active" href="/">Home</a>
+               <a href="/info">Clan Members</a>
+               <a href="/about">About</a>
+               <form method="GET" action="/login"> 
+                  <button class="entryB" type="submit">
+                     <span>My Profile </span>
+                  </button>
+               </form>
+            </div>
+         </div>
+         <div style="margin-top:210px;padding:15px 15px 50px;font-size:30px">
+            <div id="container"></div>
+         </div>
+      {{>footer}}
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/navigationbar.js"></script>
+      <script src="/js/create-profiles.js"></script>
+   </body>
+</html>

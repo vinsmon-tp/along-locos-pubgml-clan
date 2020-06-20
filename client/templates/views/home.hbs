@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{{title}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/home.css">
+      <link rel="stylesheet" href="/css/login.css">
+      <div class="page-bg"> </div>
+   </head>
+   <body>
+      <div class="main-content">
+         <div id="navbar">
+            <a href="#default" id="logo">{{title}}</a>
+            <div id="navbar-right">
+               <a class="active" href="/">Home</a>
+               <a href="/info">Clan Members</a>
+               <a href="/about">About</a>
+               <form method="GET" action="/login"> 
+                  <button class="entryB" type="submit">
+                     <span>My Profile </span>
+                  </button>
+               </form>
+            </div>
+         </div>
+         <div id="bodys">
+            <h2>{{reqNotice}}</h2>
+               <h3>{{reqNoticeBody}}</h3>
+               <h4>{{req}}</h4>
+               <ul>
+                     <li>{{req1}}</li>
+                     <li>{{req2}}</li>
+                     <li>{{req3}}</li>
+                     <li>{{req4}}</li>
+                     <li>{{req5}}</li>
+                     <li>{{req6}}</li>
+                     <li>{{req7}}</li>
+               </ul> 
+               <p>{{note1}}</p>
+               <p>{{note2}}</p>
+               <p>{{note3}}</p>
+         </div>
+      </div>
+      <script src="/js/navigationbar.js"></script>
+      <script src="/js/login.js"></script>
+      {{>footer}}
+   </body>
+</html>
