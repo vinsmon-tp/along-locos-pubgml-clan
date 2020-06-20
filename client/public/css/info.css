@@ -44,7 +44,7 @@ body {
 }
 
 #navbar #logo {
-  font-size: 35px;
+  font-size: 150%;
   font-weight: bold;
   transition: 0.4s;
   color: white;
@@ -101,7 +101,9 @@ body {
 footer {
   color: white;
   border-top: 1px solid #eeeeee;
-  margin-top: 12px;
+  border-top-width: 300%;
+  margin-top: 4px;
+  margin-bottom: 3px;
   /* padding: 8px 0; */
   font-family: "myItalicDesignText";
 }
@@ -121,12 +123,14 @@ footer {
   grid-gap: 3em; 
   grid-template-rows: repeat(var(--grid-rows), 1fr); 
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  margin-left: 220px;
-  margin-right: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 .grid-item {
-  padding: 15px;
+  padding: 5%;
   text-align: center;
 }
 
@@ -139,13 +143,13 @@ footer {
 }
 
 .f1 {
-  font-size:  16px;
+  font-size:  80%;
   color: aliceblue;
   text-align: center;
 }
 
 .f2 {
-  font-size:  24px;
+  font-size:  130%;
   color: aliceblue;
   font-family: "myItalicDesignText";
 }
