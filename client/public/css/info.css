@@ -2,17 +2,17 @@
 
 body { 
     font-family: arial;
-    max-width: 2048px;
+    /* max-width: 2048px; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    /* min-height: 100vh */
 }
 
 #navbar {
   overflow: hidden;
   background-color: #eee3eb3d;
-  padding: 90px 10px;
+  padding: 2% .54%;
   transition: 0.4s;
   position: fixed;
   width: 100%;
@@ -33,7 +33,7 @@ body {
   text-align: center;
   padding: 8px;
   text-decoration: none;
-  font-size: 18px; 
+  font-size: 85%; 
   line-height: 25px;
   border-radius: 4px;
 }
@@ -59,7 +59,7 @@ body {
   float: right;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 20%) {
   #navbar {
     padding: 20px 10px !important;
   }
@@ -74,7 +74,7 @@ body {
 }
 .page-bg {
   background: url('/img/bg1.jpg');
-  background-size: cover;
+  background-size: 100%;
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
   -o-filter: blur(1px);
@@ -148,7 +148,7 @@ footer {
   border-color: #eee3eb15;
   color: white;
   width: 50%;
-  font-size: 15px;
+  font-size: 80%;
   padding: 8px 8px;
   margin-left: 50%;
   transition: all 0.5s;
