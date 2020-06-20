@@ -6,6 +6,7 @@ const routers = require('./routers/locos')
 const http = require('http')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+require('dotenv').config()
 const mongoose = require('./db_connectors/mongoose_connector')
 const MongoStore = require('connect-mongo')(session);
 const auth = require('./middleware/auth')
