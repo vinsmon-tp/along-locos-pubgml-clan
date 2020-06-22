@@ -94,8 +94,8 @@ body {
   }
 }
 .page-bg {
-  background: url('/img/bg4.jpg');
-  background-size: cover;
+  background-color: rgb(209, 0, 0);
+  background-image: linear-gradient(to right,rgb(209, 0, 0) , rgb(218, 214, 13));
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
@@ -218,6 +218,7 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
+  margin-top: 15%;
   display: none; /* Hidden by default */
   position: fixed;
   z-index: 1; /* Sit on top */
