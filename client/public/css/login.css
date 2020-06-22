@@ -1,5 +1,10 @@
 * {box-sizing: border-box;}
 
+@font-face {
+  font-family: myItalicDesignText;
+  src: url('/fonts/Brush Script MT Italic.ttf') format('truetype');
+}
+
 body { 
   font-family: arial;
   margin: 0 auto;
@@ -149,10 +154,10 @@ footer {
   color: white;
   border-top: 1px solid #eeeeee;
   margin-top: 4px;
-  font-family: "myItalicDesignText";
 }
 
 #footer-p{
   text-align: center;
   font-size: 80%;
+  font-family: 'myItalicDesignText';
 }
