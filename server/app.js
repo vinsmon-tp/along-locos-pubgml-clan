@@ -147,7 +147,7 @@ io.on('connection', (socket)=>{
     async function createGrid(){
         try{
           let result = []
-          const columns = 3;
+          const columns = 2;
           var rows = 1
           for await (const doc of Locos.find({})) {
             let img = defaultIMG
