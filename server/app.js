@@ -108,7 +108,7 @@ app.get('/about', (req, res) => {
 app.get('/info', async(req, res) => {
   io.on('connection', async (socket) => {
     
-    const totalProfilesToDisplay = 2
+    const totalProfilesToDisplay = 4
     socket.on('paginationRequest', async (id)=>{
       let skip = 1
         if(id === 1){
