@@ -43,3 +43,12 @@ function makeRows(rows, cols, data) {
 socket.on('gridData', ({rows,columns, result}) => {
   makeRows(rows,columns, result);
 })
+
+function paginationResponder(id){
+  var x = document.getElementsByClassName('active')
+  for(i=0; i<x.length; ++i){
+    x[i].classList.remove('active')
+  }
+  socket.emit('paginationRequest', id)
+  document.getElementById(id.toString()).className = 'active'
+}

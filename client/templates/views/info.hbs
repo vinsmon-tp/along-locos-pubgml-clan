@@ -27,6 +27,13 @@
       <script src="/socket.io/socket.io.js"></script>
       <script src="/js/navigationbar.js"></script>
       <script src="/js/create-profiles.js"></script>
+      <div class="pagination">
+         <a href="#">&laquo;</a>
+         <a id="1" onclick="paginationResponder(1)" href="javascript:void(0);">1</a>
+         <a id="2" href="#" onclick="paginationResponder(2)" >2</a>
+         <a id="3" href="#" onclick="paginationResponder(3)" >3</a>
+         <a href="#">&raquo;</a>
+      </div>
       {{>footer}}
    </body>
 </html>

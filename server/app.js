@@ -105,8 +105,23 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.get('/info', (req, res) => {
-    res.render('info', {
+app.get('/info', async(req, res) => {
+  io.on('connection', async (socket) => {
+    
+    const totalProfilesToDisplay = 2
+    socket.on('paginationRequest', async (id)=>{
+      let skip = 1
+        if(id === 1){
+          skip = 0
+        }else{
+          skip = (id-1) * totalProfilesToDisplay
+        }
+        await createGrid(skip, totalProfilesToDisplay, socket)
+    })
+    await createGrid(0, totalProfilesToDisplay, socket)
+  })
+  
+  res.render('info', {
         title : "Locos Warriors",
         name: 'AlongLocos(Kerala PUBML)',
         page_desc : "Here you can read locs"
@@ -142,53 +157,97 @@ app.get('/user', auth.redirectToMain, async(req, res) => {
   })
 })
 
-io.on('connection', (socket)=>{
+// io.on('connection', (socket)=>{
     
-    async function createGrid(){
-        try{
-          let result = []
-          const columns = 2;
-          var rows = 1
-          for await (const doc of Locos.find({})) {
-            let img = defaultIMG
-            if(doc.avatar){
-              img = `data:image/png;base64, ${doc.avatar.toString('base64')}`
-            }
-            result.push({
-              name : doc.name,
-              kd : doc.kd,
-              url : img,
-              player_desc : doc.player_desc
-            })
-          }
+//     async function createGrid(){
+//         try{
+//           let result = []
+//           const columns = 2;
+//           var rows = 1
+//           for await (const doc of Locos.find({}).sort({ kd: -1 }) ) {
+//             let img = defaultIMG
+//             if(doc.avatar){
+//               img = `data:image/png;base64, ${doc.avatar.toString('base64')}`
+//             }
+//             result.push({
+//               name : doc.name,
+//               kd : doc.kd,
+//               url : img,
+//               player_desc : doc.player_desc
+//             })
+//           }
 
-          if(result.length % 3 !== 0){
-            const defaultData = {
-              'url' : defaultIMG,
-              'name' : 'Legend yet to born',
-              'kd' : 0,
-              'player_desc' : 'Anyone interested contact admin'
-            }
-            if(result.length < columns){
-              const missingDetails = columns - result.length
-              for(i =0 ; i<missingDetails; i++){
-                result.push(defaultData)
-              }
-            }else{
-              const missingDetails = columns - (result.length % columns)
-              for(i =0 ; i<missingDetails; i++){
-                result.push(defaultData)
-              }
-            }
-          }
-          rows = result.length/columns
-          socket.emit('gridData', { rows, columns, result })
-        }catch(e){
-          console.log(e)
+//           if(result.length % 3 !== 0){
+//             const defaultData = {
+//               'url' : defaultIMG,
+//               'name' : 'Legend yet to born',
+//               'kd' : 0,
+//               'player_desc' : 'Anyone interested contact admin'
+//             }
+//             if(result.length < columns){
+//               const missingDetails = columns - result.length
+//               for(i =0 ; i<missingDetails; i++){
+//                 result.push(defaultData)
+//               }
+//             }else{
+//               const missingDetails = columns - (result.length % columns)
+//               for(i =0 ; i<missingDetails; i++){
+//                 result.push(defaultData)
+//               }
+//             }
+//           }
+//           rows = result.length/columns
+//           socket.emit('gridData', { rows, columns, result })
+//         }catch(e){
+//           console.log(e)
+//         }
+//       }
+//       createGrid()
+// })
+
+async function createGrid(skip, limit, socket){
+  try{
+    let result = []
+    const columns = 2;
+    var rows = 1
+    for await (const doc of Locos.find({}).sort({ kd: -1 }).skip(skip).limit(limit) ) {
+      let img = defaultIMG
+      if(doc.avatar){
+        img = `data:image/png;base64, ${doc.avatar.toString('base64')}`
+      }
+      result.push({
+        name : doc.name,
+        kd : doc.kd,
+        url : img,
+        player_desc : doc.player_desc
+      })
+    }
+
+    if(result.length % columns !== 0){
+      const defaultData = {
+        'url' : defaultIMG,
+        'name' : 'Legend yet to born',
+        'kd' : 0,
+        'player_desc' : 'Anyone interested contact admin'
+      }
+      if(result.length < columns){
+        const missingDetails = columns - result.length
+        for(i =0 ; i<missingDetails; i++){
+          result.push(defaultData)
+        }
+      }else{
+        const missingDetails = columns - (result.length % columns)
+        for(i =0 ; i<missingDetails; i++){
+          result.push(defaultData)
         }
       }
-      createGrid()
-})
+    }
+    rows = result.length/columns
+    socket.emit('gridData', { rows, columns, result })
+  }catch(e){
+    console.log(e)
+  }
+}
 
 server.listen(PORT, ()=>{
     console.log('Server is running...', PORT)
