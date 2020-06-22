@@ -1,9 +1,9 @@
 .card3 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 15%;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 8%;
   }
 
   @font-face {
@@ -23,11 +23,9 @@
 
 body { 
     font-family: arial;
-    max-width: 2048px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh
 }
 
 #navbar {
@@ -54,13 +52,13 @@ body {
   text-align: center;
   padding: 8px;
   text-decoration: none;
-  font-size: 16px; 
+  font-size: 80%; 
   line-height: 25px;
   border-radius: 4px;
 }
 
 #navbar #logo {
-  font-size: 35px;
+  font-size: 120%;
   font-weight: bold;
   transition: 0.4s;
   color: rgb(255, 255, 255);
@@ -80,7 +78,7 @@ body {
   float: right;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 20%) {
   #navbar {
     padding: 20px 10px !important;
   }
@@ -95,7 +93,7 @@ body {
 }
 .page-bg {
   background-color: rgb(209, 0, 0);
-  background-image: linear-gradient(to right,rgb(209, 0, 0) , rgb(218, 214, 13));
+  background-image: linear-gradient(to right,rgb(209, 0, 0) , rgb(177, 174, 14));
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
@@ -218,7 +216,6 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
-  margin-top: 15%;
   display: none; /* Hidden by default */
   position: fixed;
   z-index: 1; /* Sit on top */
@@ -238,6 +235,7 @@ span.psw {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  margin-top: 45%;
 }
 
 /* The Close Button (x) */
@@ -273,7 +271,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 40%) {
+@media screen and (max-width: 20%) {
   span.psw {
      display: block;
      float: none;

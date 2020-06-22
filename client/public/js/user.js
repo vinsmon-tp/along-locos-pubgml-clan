@@ -4,7 +4,7 @@ socket.on('profilepic', (url) => {
     container.innerHTML = ''
     var img = document.createElement("IMG");
     img.setAttribute("src", url);
-    img.setAttribute("width", "50%");
+    img.setAttribute("width", "30%");
     container.appendChild(img)
 })
 
