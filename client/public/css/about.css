@@ -140,9 +140,9 @@ footer {
 }
 
 p.ridge {
-  margin-top: 5%;
+  margin-top: 10%;
   border-style: ridge;
-  font-size: 40%;
+  font-size: 35%;
   background-color: silver;
   color: black;
   font-style: "Arial";
