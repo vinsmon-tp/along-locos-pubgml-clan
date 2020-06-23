@@ -219,7 +219,7 @@ async function createGrid(skip, limit, socket){
         name : doc.name,
         kd : doc.kd,
         url : img,
-        player_desc : doc.player_desc
+        player_desc : doc.player_desc.toLowerCase()
       })
     }
 
